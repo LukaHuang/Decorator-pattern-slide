@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+          <h3>讀書會26th</h3>
+          <h2>Head first Design Pattern</h2>
+          <h2>第三章 裝飾者模式</h2>
+					<p><small>Created by <a href="https://www.facebook.com/ttudancesteven">OceanTTD</a></small></p>
+				</section>
+
+				<section>
+         	<section>
+         		<h2>我們來到星巴克</h2>
+         	</section>
+					<section data-markdown>
+						## 想要點一杯咖啡
+					</section>
+					<section>
+					  <h2>有以下幾種選擇</h2>
+            <ul>
+              <li>HouseBlend</li>
+              <li>DarkRoast (深度烘焙)</li>
+              <li>Decaf</li>
+              <li>Espresso</li>
+            </ul>
+					</section>
+					<section>
+            <img src="img/1.jpg"  alt=""/>
+					</section>
+          <section>
+            <h3>但是如果你想要</h3>
+            <p class="fragment fade-in">加糖</p>
+            <p class="fragment fade-up">加牛奶</p>
+            <p class="fragment fade-in">加可可粉</p>
+            <p class="fragment fade-up">那...整個類別結構就會變成...</p>
+          </section>
+          <section>
+            <img src="img/2.jpg"  alt=""/>
+          </section>
+          <section data-background="img/fake.gif">
+            <!-- <h2>... and GIFs!</h2> -->
+          </section>
+				</section>
+        <section>
+          <section>
+            <h2>那我們要如何改善?</h2>
+          </section>
+          <section>
+            <h2>Decorator Pattern</h2>
+            <h3>裝飾者模式</h3>
+          </section>
+          <section>
+            <h2>改良步驟</h2>
+            <ol>
+              <li>Take a DarkRoast object</li>
+              <li>Decorate it with a Mocha object</li>
+              <li>Decorate it with Whip object</li>
+              <li>Call the cost() method and rely on delegation to add on the condiment cost</li>
+            </ol>
+          </section>
+          <section>
+            <img src="img/2/5.jpg"  alt=""/>
+          </section>
+          <section>
+            <img src="img/2/4.jpg"  alt=""/>
+          </section>
+          <section>
+            <img src="img/2/3.jpg"  alt=""/>
+          </section>
+          <section>
+            <img src="img/2/2.jpg"  alt=""/>
+          </section>
+          <section>
+            <img src="img/2/1.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>程式碼</h3>
+            <a href="https://github.com/bethrobson/Head-First-Design-Patterns/tree/master/src/headfirst/designpatterns/decorator/starbuzz">Head First Design Pattern In Java</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>使用 Ruby 該怎麼寫？</h2>
+          </section>
+          <section>
+            <h2>Design Pattern in Ruby</h2>
+            <a href="https://github.com/nslocum/design-patterns-in-ruby/tree/master/decorator"></a>
+          </section>
+          <section>
+            <h3>這是書中的類別圖</h3>
+            <img src="img/3/1.jpg"  alt=""/>
+          </section>
+          <section>
+            <h2>我們來看看更嚴謹一點的類別圖</h2>
+          </section>
+          <section>
+            <h3>正式的畫法</h3>
+            <img src="img/3/decorator_class_d.png"  alt="" style="height: 500px"/>
+          </section>
+          <section>
+            <h3>複習一下類別圖</h3>
+          </section>
+          <section>
+            <h3>Generalization 一般化</h3>
+            <p>說明：物件導向程式中稱為Inheritance-繼承。表示繼承了父類別。</p>
+            <img src="http://user-image.logdown.io/user/6619/blog/6590/post/182932/4LLXgIJpR9akjqn1ExfC_2014-03-07_010113.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>Realization 實現</h3>
+            <p>說明：物件導向程式中的Implementation-實作。表示實作了介面。</p>
+            <img src="http://user-image.logdown.io/user/6619/blog/6590/post/182932/fSp6zw8yRHWzosqgUnSx_2014-03-07_010852.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>aggregation 聚合</h3>
+            <p>說明：弱關連 - 整體(Whole)消失後，部分(part)還是繼續存在。有包含的意思，英文為is-part-of。例如：學生是學校的一部分，學校不見了，學生還是可以到別的學校讀書，並不會因為學校不見跟著消失。</p>
+            <img src="http://user-image.logdown.io/user/6619/blog/6590/post/182932/dojgQxczTwS8niQKmcCh_2014-03-07_011238.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>Composition</h3>
+            <p>說明：強關連 - 比聚合更強的包含關係，整體消失，部分也會跟著消失。整體-部分的生命週期是一致的。
+如果電話消失了，那麼按鍵也會跟著消失。</p>
+            <img src="http://user-image.logdown.io/user/6619/blog/6590/post/182932/p4ghACcQleb3VDv6Aahp_2014-03-07_013507.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>回到類別圖</h3>
+            <img src="img/3/decorator_class_d.png"  alt="" style="height: 500px"/>
+          </section>
+          <section>
+            <h3>可以看出有兩個主要角色</h3>
+            <ul>
+              <li>Concret Component</li>
+              <li>Decorator</li>
+            </ul>
+          </section>
+          <section>
+            <h3>接著來看範例程式碼</h3>
+            <ul>
+              <li><a href="https://github.com/nslocum/design-patterns-in-ruby/tree/master/decorator">design-patterns-in-ruby/decorator</a></li>
+                <ul>
+                  <li><a href="[design-patterns-in-ruby/writer_decorator.rb at master · nslocum/design-patterns-in-ruby](https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/writer_decorator.rb)">writer_decorator.rb</a></li>
+                  <li><a href="https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/simple_writer.rb">simple_writer.rb</a></li>
+                  <li><a href="https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/main.rb">main.rb</a></li>
+                </ul>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>使用 Module 實作 Decorator Pattern</h2>
+            <a href="https://github.com/nslocum/design-patterns-in-ruby/tree/master/decorator/using_modules">github/design-patterns-in-ruby/decorator/using_modules/</a>
+          </section>
+          <section>
+            <h3>總共會用到三個檔案</h3>
+            <ul>
+              <li><a href="https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/using_modules/decorator_modules.rb">decorator_modules.rb</a></li>
+              <li><a href="https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/using_modules/main.rb">main.rb</a></li>
+              <li><a href="https://github.com/nslocum/design-patterns-in-ruby/blob/master/decorator/simple_writer.rb">simple.rb</a></li>
+            </ul>
+          </section>
+          <section>
+            <h3>裝飾者全部寫在 decorotor_modules.rb 內</h3>
+            <img src="img/4/deco.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>SimpleWriter一如往常</h3>
+            <img src="img/4/sim.jpg"  alt=""/>
+          </section>
+          <section>
+            <h3>直接看看如何使用</h3>
+            <img src="img/4/main.jpg"  alt=""/>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>上半場結束</h2>
+            <p>休息五分鐘</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>設計模式的起源</h2>
+          </section>
+          <section>
+            <h3>設計模式起源於建築學</h3>
+          </section>
+          <section>
+            <h3>發明者 Alexandar </h3>
+            <h4>一位知名的建築師</h4>
+          </section>
+          <section>
+            <h3>建築的美可以客觀評價嘛？</h3>
+          </section>
+          <section>
+            <h3>我們如何判斷一個建築是否優秀？</h3>
+          </section>
+          <section>
+            <h3>Alexandar 觀察了大量的建築</h3>
+          </section>
+          <section>
+            <h3>各種建築結構即使屬於同一類型，也會互不相同。</h3>
+          </section>
+          <section>
+            <h3>雖然互不相同，但可能都具有很高的品質。</h3>
+          </section>
+          <section>
+            <h3>在互不相同的情況下，解決相似問題採取的方式也可能不同。</h3>
+          </section>
+          <section>
+            <h3>Alexandar觀察解決相似問題的不同結果，縮小關注範圍，來看清優秀設計的相似之處。</h3>
+          </section>
+          <section>
+            <h3>模式</h3>
+            <p>A pattern is a solution to a problem in a context</p>
+            <p>模式是在一個情境之下，針對一個問題的解法。</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>設計模式的關鍵特徵</h2>
+          </section>
+          <section>
+            <h3>模式的關鍵特徵(1)</h3>
+            <table class="reveal">
+              <tr>
+                <td>Name</td><td>模式名稱</td>
+              </tr>
+              <tr>
+                <td>Intent</td><td>模式的目的</td>
+              </tr>
+              <tr>
+                <td>Problem</td><td>描述問題本身</td>
+              </tr>
+              <tr>
+                <td>Solution</td><td>解決方案</td>
+              </tr>
+              <tr>
+                <td>Consequence</td><td>使用解決方案後的效果</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h3>模式的關鍵特徵(2)</h3>
+            <table class="reveal">
+              <tr>
+                <td>Participants and Collaborators</td>
+                <td>參與者與協作者(entity)</td>
+              </tr>
+              <tr>
+                <td>Implementation</td>
+                <td>模式的實作方式。ps:實作只是模式的實作方式，並不能算是模式本身。</td>
+              </tr>
+              <tr>
+                <td>Generic Structure</td>
+                <td>一般性結構，顯示模式結構的標準圖。</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h3>裝飾者模式的關鍵特徵</h3>
+            <table class="reveal">
+              <tr>
+                <td>Intent 意圖</td>
+                <td>動態地給物件增加職責</td>
+              </tr>
+              <tr>
+                <td>problem</td>
+                <td>附加功能可能發生於物件的基礎功能之前或之後。</td>
+              </tr>
+              <tr>
+                <td>Solution</td>
+                <td>不使用繼承來擴展一個物件的功能。</td>
+              </tr>
+              <tr>
+                <td>Consequence</td>
+                <td>所增加的功能分別放在Decorator物件中。就可以隨需要增加功能。即使能夠動態的增加功能，物件鏈還是必須源自ConcreteComponent</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+        <section>
+          <h2>參考資料</h2>
+          <ul>
+            <li>Design Pattern Explained</li>
+            <li>Design patterns In Ruby</li>
+            <li>Head first Design Pattern</li>
+            <li>搞笑談軟工 blog</li>
+          </ul>
+        </section>
+        <section>
+          <h2>報告到這邊</h2>
+          <h3>有問題歡迎提出來</h3>
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
